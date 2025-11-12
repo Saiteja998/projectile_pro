@@ -3,7 +3,10 @@ services:
     name: projectile-pro
     env: static
     buildCommand: |
+      # Install Flutter
       git clone https://github.com/flutter/flutter.git -b stable
       export PATH="$PATH:`pwd`/flutter/bin"
-      flutter build web
+      flutter doctor
+      flutter build web --release
     staticPublishPath: build/web
+
